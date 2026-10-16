@@ -1,6 +1,6 @@
 # Naver SEO Toolkit — 현재 프로젝트 상태
 
-기준: 2026-10-16 / 로컬 코드·CLI·테스트 확인. 새 세션은 `AGENTS.md` → 이 문서 → 요청 관련 코드·테스트 순으로 읽는다. 실행 옵션과 상세 사용법은 [README](../README.md)를 참조한다.
+문서 확인: 2026-10-17 KST / 아래 실제 회귀 실행 시각은 2026-10-16 UTC 기록이다. 문서 정정으로 테스트를 재실행하지 않았다. 새 세션은 `AGENTS.md` → 이 문서 → 요청 관련 코드·테스트 순으로 읽는다. 실행 옵션과 상세 사용법은 [README](../README.md)를 참조한다.
 
 ## 목적과 현재 범위
 
@@ -17,7 +17,7 @@ WordPress·아임웹·카페24·자체 개발 등 다양한 웹 환경의 고객
 | STEP 3 · IMPLEMENTED | HTTP/robots/Yeti/색인 지시어·메타·제목 계층·링크·ALT·승인된 사이트맵·기존 JSON-LD·중복 메타 검사, SEO JSON/HTML | `environment_detector/seo_{audit,checks,policy,report}.py`; 공통 `fetch.py`; `tests/test_seo.py`, `tests/fixtures/seo/` |
 | STEP 3.1 · IMPLEMENTED | 오프라인 통합 Workbench, 단계 탐색·근거 펼치기·기존 보고서 링크·다음 조치·CLI/Codex 텍스트 복사·상태/출처 분리 | `environment_detector/{workbench,workbench_actions,workbench_report}.py`; `project_cli.py`; `tests/test_workbench.py`; `scripts/check_workbench_browser.mjs` |
 
-**현재 대조 결과:** STEP 1~3 및 STEP 3.1 구현은 실제 코드·CLI·회귀와 일치한다. 최초 로컬 기준 커밋 `b560149ecf91`를 생성하고 실제 커밋 export에서 391개 전체 회귀를 통과했다. 원시 분석 JSON 8개는 로컬 보존·Git 제외했으며 순수 합성 fixture 8개를 포함해 추적 파일은 61개다. 제품 기능·JSON·CLI는 유지한다. 최종 검증 기록은 상태 문서 2개의 후속 문서 커밋으로 남긴다. 상세 목록·출처·커밋 기록은 [최초 커밋 검토·완료 기록](FIRST_COMMIT_PLAN.md)에 있다. 프로그램 IMPLEMENTED와 실제 고객 작업 COMPLETED는 별개다.
+**현재 대조 결과:** STEP 1~3 및 STEP 3.1 구현은 실제 코드·CLI·회귀와 일치한다. 최초 로컬 기준 커밋 `b560149ecf91`를 생성하고 실제 커밋 export에서 391개 전체 회귀를 통과했다. 원시 분석 JSON 8개는 로컬 보존·Git 제외했으며 순수 합성 fixture 8개를 포함해 추적 파일은 61개다. 제품 기능·JSON·CLI는 유지한다. 검증 기록은 문서 커밋 `40c66b219a3e`에 남겼으며 이번에는 완료 상태와 문서 파일명만 정정했다. 상세 목록·출처·커밋 기록은 [최초 커밋 검토·완료 기록](FIRST_COMMIT_PLAN.md)에 있다. 프로그램 IMPLEMENTED와 실제 고객 작업 COMPLETED는 별개다.
 
 ## 데이터와 CLI
 
@@ -55,15 +55,15 @@ python -m environment_detector project dashboard customer-data/projects/JOB-ID
 
 ## 최근 검증·첫 로컬 커밋
 
-- 실행 세션: `01a14506-e649-71a3-991c-291340a71885`, 사용자 지시에 따른 YOLO 재개. 추가 Codex 세션/에이전트 없이 단일 작성 세션으로 진행한다. 이번 사용자 승인은 명시적 후보 스테이징·첫 로컬 커밋·검증 결과 문서 커밋까지다. 원격 push·다음 STEP·사이트 요청·브라우저/외부 엔진·설치·전역 설정 변경·기존 이력 재작성은 포함하지 않는다.
+- 실행 세션: `01a14506-e649-71a3-991c-291340a71885`, 사용자 지시에 따른 YOLO 재개. 추가 Codex 세션/에이전트 없이 같은 단일 작성 세션으로 진행했다. 이번 사용자 승인은 명시적 후보 스테이징·첫 로컬 커밋·검증 결과 문서 커밋과 이번 문서 정정까지다. 원격 push·다음 STEP·사이트 요청·브라우저/외부 엔진·설치·전역 설정 변경·기존 이력 재작성은 포함하지 않는다.
 - 최신 로컬 전체 회귀: **2026-10-16 14:34:14~14:34:29 UTC**, 기존 `.venv/Scripts/python.exe -m pytest -q` → **391 passed in 13.91s**, 종료 코드 0. 실제 `cwd`는 프로젝트 루트, `environment_detector.__file__`은 그 루트의 `environment_detector/__init__.py`임을 실행 전 assert로 확인했다.
-- pytest와 Python 하위 프로세스에서 실네트워크와 원시 fixture 디렉터리 읽기를 차단한다. 커밋 export에서는 원본 프로그램·스크립트·테스트·양식 읽기도 차단해 editable install fallback을 금지한다. 기존 가상환경과 의존성만 재사용한다.
+- pytest와 Python 하위 프로세스에서 실네트워크와 원시 fixture 디렉터리 읽기를 차단했다. 커밋 export에서는 원본 프로그램·스크립트·테스트·양식 읽기도 차단해 editable install fallback을 금지했다. 기존 가상환경과 의존성만 재사용했다.
 - 보호 대상 39개 중 **36개 SHA-256 동일**: 원시 JSON 8개·프로그램 20개·스크립트 4개·pyproject 1개·가상 예제 JSON 3개. Markdown 양식 3개만 위 줄 끝 공백 수정으로 의도적 해시 변경이며 전후 해시는 `minimal-template-fix.json`에 기록했다. `.gitignore` 불변, 원시 8개 포함 **29개 제외 경로 검사 통과**. 고객 데이터 디렉터리는 읽거나 수정하지 않는다.
 - 초기 Git 상태(작업 전 이력): HEAD 커밋 없음·추적/스테이징 파일 0개·인덱스 파일 없음이었다. 현재 커밋 상태는 아래 완료 기록으로 구분한다.
 - 로그와 백업은 `results/codex-delegation/commit-20261016T142733Z/`에만 보존한다. `pre-task.zip`·`pre-task-sha256.json`·`initial-git.json`은 이번 작업 전의 제한된 백업/메타데이터이며 고객 자료와 Git author identity를 추적 문서에 기록하지 않는다. 기존 `results/codex-delegation/20261016T140242Z/before.zip`도 보존한다.
 - 검토 결과: 기존 후보 **61개**와 명세 일치. 내용 검색 43건은 테스트의 가짜 인증/연락처·공격 입력과 변수명 오탐으로 문맥 검토했고 실제 인증정보/고객 자료·unsafe 추가 파일·필수 파일 누락은 발견하지 않았다. 전용 secret scanner는 설치하지 않았다. 제품·테스트·fixture는 불변이다. 스테이징 검사에서 양식 3개 줄 끝 공백 6곳을 발견해 hardbreak 5곳은 동등한 CommonMark 백슬래시 줄바꿈, 빈 목록 1곳은 공백 제거로 최소 수정했다. 의미·항목은 유지하며 검사 설정을 완화하지 않았다.
 - 출처/계약: 기존 **381개 + 출처/독립성 회귀 10개 = 391개**. 백업의 기존 테스트 9개와 assert **507개** 및 decorator/매개변수화 동일. marker 있는 합성 JSON은 실제 관찰로 바꾸지 않고, 구형 출처 미제공 분기는 별도 손 작성한 입력으로 검사한다. UNKNOWN·후보·오류/SSRF·마스킹/XSS·동의·CLI/보고서·OPTIONAL 검증을 유지했다.
-- 이번 파일 수정: `templates/01_customer_inquiry_quote.md`·`02_customer_technical_handoff.md`·`03_internal_intake_review.md`의 줄 끝 공백, `docs/PROJECT_STATE.md`·`docs/FIRST_COMMIT_PLAN.md`의 승인 범위·Git 사실·검증/커밋 기록. 초기 baseline에는 기존 STEP 1~3.1 코드·양식·설정/문서와 합성 테스트를 함께 포함한다.
+- 첫 커밋 완료 작업의 파일 수정: `templates/01_customer_inquiry_quote.md`·`02_customer_technical_handoff.md`·`03_internal_intake_review.md`의 줄 끝 공백, `docs/PROJECT_STATE.md`·`docs/FIRST_COMMIT_PLAN.md`의 승인 범위·Git 사실·검증/커밋 기록. 초기 baseline에는 기존 STEP 1~3.1 코드·양식·설정/문서와 합성 테스트를 함께 포함했다. 이번 최종 정정에서는 위 문서 2개만 변경했다.
 
 ## 커밋·완료 상태
 
@@ -71,14 +71,15 @@ python -m environment_detector project dashboard customer-data/projects/JOB-ID
 - 커밋 자체 검증: `git archive`로 위 커밋을 `results/codex-delegation/commit-20261016T142733Z/committed-export/`에 새로 내보냈다. export의 파일 61개가 실제 커밋 트리와 일치하고 `.git`·`.venv`·원시 JSON 8개·고객/결과/바이너리는 없다.
 - 실제 export import: 기존 가상환경의 Python 절대 경로를 재사용해 cwd를 export로 지정했다. `environment_detector.__file__`이 **`results/codex-delegation/commit-20261016T142733Z/committed-export/environment_detector/__init__.py`**(프로젝트 루트 기준)임을 assert로 확인했다. 원본 소스/원시 fixture 읽기 및 실네트워크를 차단한 상태다.
 - export 전체 회귀: **2026-10-16 14:35:13~14:35:28 UTC**, `-m pytest -q` → **391 passed in 14.80s**, 종료 코드 0. 작업 트리 복사본이 아닌 실제 첫 커밋 트리의 결과다.
-- 최종 기록은 상태 문서 2개만의 후속 커밋 `docs: record baseline verification and completion`으로 남긴다. 문서 커밋 자체의 해시를 자기 문서에 넣지 않는다. 최종 HEAD의 소스/테스트/fixture/양식/설정 blob은 검증한 커밋과 동일하고 차이는 이 문서와 PROJECT_STATE.md뿐이다. 전체 회귀를 불필요하게 반복하지 않고 blob 동일성·문서 일관성을 검사한다.
-- 최종 추적 파일은 **61개**이며 스테이징·미커밋 변경·추가 untracked 파일이 없는 깨끗한 작업 트리로 완료한다. 작업 전의 ignored 고객 자료·원시 8개·results/·도구는 그대로 보존한다. 실제 최종 HEAD/상태/검사 결과는 Git 제외 `results/codex-delegation/commit-20261016T142733Z/completion-summary.json`에 기록한다.
+- 검증 기록은 문서 커밋 **`40c66b219a3e166cdd2993e68bc11c20560125b7`** — `docs: record baseline verification and completion`에 남겼다. 검증한 기준 커밋 이후 변경 파일은 **`docs/PROJECT_STATE.md`와 `docs/FIRST_COMMIT_PLAN.md`**뿐이다. 최종 HEAD의 나머지 **59개 Git blob**은 검증한 기준 커밋과 동일하다. 이번 문서 정정에서는 테스트를 재실행하지 않고 blob 동일성·문서 일관성을 확인했다.
+- 최종 추적 파일은 **61개**이며 작업 트리는 깨끗하고 스테이징 항목도 없다. ignored 고객 자료·원시 JSON 8개·results/·도구는 보존했다. 실제 최종 HEAD·부모 이력·상태·검사 결과는 Git 제외 `results/codex-delegation/commit-20261016T142733Z/completion-final.json`에 기록했다. 기존 `completion-summary.json`은 앞선 두 커밋 완료 시점의 이력으로 보존했다.
+- 최종 인계 중단은 Git 커밋과 전체 회귀가 성공한 뒤 최종 응답을 전달하는 과정에서 발생한 실행 세션 사용량 한도 오류였다. 같은 ID로 계속해 문서 정정과 최종 인계를 마무리했다. 테스트 실패나 커밋 실패가 아니며 다음 STEP은 시작하지 않았다.
 - 이번 요청 범위의 미해결 문제는 없다. STEP 4와 다른 기능 개발은 시작하지 않았다. 합성 회귀 통과는 실제 고객 사이트의 최신 기술·SEO·권한·색인/순위/캐러셀 노출을 입증하지 않는다.
 
 ## 현재와 다음 작업
 
-- 현재: 승인된 첫 로컬 기준 커밋과 실제 커밋 export의 391개 회귀 검증을 완료했다. 이 문서 커밋으로 검증 결과 기록까지 마무리한다. 제품·테스트·입력은 검증한 커밋과 동일하며 요청 범위의 남은 문제는 없다.
-- 다음: 이 단계의 결과를 조정 세션에 인계하고 종료한다. 원격 push·다음 STEP·사이트 요청·운영 변경은 실행하지 않는다. 이후 작업은 사용자 후속 지시를 따른다.
+- 현재: 승인된 첫 로컬 기준 커밋·실제 커밋 export의 391개 회귀 검증·결과 기록·문서 정정을 완료했다. 제품·테스트·입력은 검증한 기준 커밋과 동일하며 요청 범위의 남은 문제는 없다. 사용자 후속 지시를 기다린다.
+- 다음: 최종 결과를 조정 세션에 인계하고 종료한다. 다음 STEP은 시작하지 않았으며 원격 push·사이트 요청·운영 변경도 하지 않았다. 사용자 후속 지시 전 추가 작업은 없다.
 - 한계: 실제 고객 권한·운영 환경·검색 노출 검증은 하지 않았다. 합성 입력과 오프라인 회귀는 소프트웨어 동작만 검증한다.
 
 ## 미구현·제약·미확인
