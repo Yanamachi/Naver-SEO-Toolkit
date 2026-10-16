@@ -78,16 +78,17 @@ python -m environment_detector project dashboard customer-data/projects/JOB-ID
 
 ## 현재와 다음 작업
 
-- 현재: 첫 로컬 기준 커밋·실제 커밋 export의 391개 회귀 검증·문서 정정과, 별도 승인된 GitHub 비공개 저장소의 최초 push를 완료했다. 제품·테스트·입력은 검증한 기준 커밋과 동일하다. 사용자 후속 지시를 기다린다.
+- 현재: 첫 로컬 기준 커밋·실제 커밋 export의 391개 회귀 검증·문서 정정·GitHub push를 완료했다. 저장소는 사용자의 후속 요청에 따라 **공개(PUBLIC)** 상태다. 제품·테스트·입력은 검증한 기준 커밋과 동일하다. 사용자 후속 지시를 기다린다.
 - 다음: 사용자 후속 지시 대기. 다음 STEP·사이트 요청·운영 변경은 시작하지 않았다.
 - 한계: 실제 고객 권한·운영 환경·검색 노출 검증은 하지 않았다. 합성 입력과 오프라인 회귀는 소프트웨어 동작만 검증한다.
 
 ## GitHub 원격 저장소 — 2026-10-17 KST
 
-- 사용자의 명시적 push 요청에 따라 로그인된 `Yanamachi` 계정에 [Naver-SEO-Toolkit](https://github.com/Yanamachi/Naver-SEO-Toolkit) **비공개 저장소**를 생성했다. `origin`은 `https://github.com/Yanamachi/Naver-SEO-Toolkit.git`, 브랜치는 `main`, 추적 대상은 `origin/main`이다.
+- 사용자의 명시적 push 요청에 따라 로그인된 `Yanamachi` 계정에 [Naver-SEO-Toolkit](https://github.com/Yanamachi/Naver-SEO-Toolkit)을 처음 비공개로 생성했다. 이후 2026-10-17 KST 사용자의 공개 전환 요청으로 **공개(PUBLIC)**로 변경했다. GitHub의 `isPrivate: false`와 인증 없는 API 조회의 HTTP 200을 확인했다. `origin`은 `https://github.com/Yanamachi/Naver-SEO-Toolkit.git`, 브랜치는 `main`, 추적 대상은 `origin/main`이다.
 - 최초 push는 `024a094998698fb0afd1511a2e88e7eeaadcd2eb`까지 반영됐으며 GitHub API의 원격 SHA와 로컬 HEAD 일치를 확인했다. 이번 원격 상태 기록도 같은 브랜치의 문서 커밋으로 관리한다. 최신 동기화는 `git rev-parse HEAD`와 `git ls-remote origin refs/heads/main`으로 확인한다.
 - 추적 파일 61개만 업로드한다. 고객 자료·원시 분석 JSON 8개·결과/로그/백업·가상환경·외부 실행 파일·인증정보 제외 정책을 유지한다. 제품·테스트·fixture 변경이 없어 pytest는 다시 실행하지 않았으며 위 391개 회귀 결과와 검증한 Git blob의 동일성을 유지한다.
 - 이번 원격 생성·push는 조정 세션이 Git/GitHub CLI로 직접 처리했다. 인증은 기존 GitHub CLI 키링을 재사용했고 push 명령에만 credential helper를 지정했다. 토큰 저장·전역 설정 변경·force push는 하지 않았다. 변경 전 Git 로컬 설정과 상태 문서 백업, 최종 원격 검증 기록은 Git 제외 `results/git-push/`에 있다.
+- 공개 전환 전 설정·상태 문서 백업과 인증 없는 조회 검증은 Git 제외 `results/github-visibility/`에 보존했다. 설정 복구가 필요하면 사용자 요청 후 `gh repo edit Yanamachi/Naver-SEO-Toolkit --visibility private --accept-visibility-change-consequences`로 비공개로 되돌릴 수 있다.
 
 ## 미구현·제약·미확인
 
