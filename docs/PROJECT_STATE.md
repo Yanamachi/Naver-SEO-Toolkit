@@ -17,7 +17,7 @@ WordPress·아임웹·카페24·자체 개발 등 다양한 웹 환경의 고객
 | STEP 3 · IMPLEMENTED | HTTP/robots/Yeti/색인 지시어·메타·제목 계층·링크·ALT·승인된 사이트맵·기존 JSON-LD·중복 메타 검사, SEO JSON/HTML | `environment_detector/seo_{audit,checks,policy,report}.py`; 공통 `fetch.py`; `tests/test_seo.py`, `tests/fixtures/seo/` |
 | STEP 3.1 · IMPLEMENTED | 오프라인 통합 Workbench, 단계 탐색·근거 펼치기·기존 보고서 링크·다음 조치·CLI/Codex 텍스트 복사·상태/출처 분리 | `environment_detector/{workbench,workbench_actions,workbench_report}.py`; `project_cli.py`; `tests/test_workbench.py`; `scripts/check_workbench_browser.mjs` |
 
-**현재 대조 결과:** STEP 1~3 및 STEP 3.1 구현은 실제 코드·CLI·회귀와 일치한다. 기능 개발 없이 최초 로컬 기준 커밋을 완료하는 요청이다. 원시 분석 JSON 8개는 로컬 보존·Git 제외하며 순수 합성 fixture 8개로 회귀 입력을 재현한다. 후보는 61개이며 새 로컬 전체 회귀가 391개 통과했다. 실제 커밋 트리 검증은 첫 커밋 생성 후 수행한다. 상세 목록·출처·커밋 기록은 [최초 커밋 검토·완료 기록](FIRST_COMMIT_PLAN.md)에 있다. 프로그램 IMPLEMENTED와 실제 고객 작업 COMPLETED는 별개다.
+**현재 대조 결과:** STEP 1~3 및 STEP 3.1 구현은 실제 코드·CLI·회귀와 일치한다. 최초 로컬 기준 커밋 `b560149ecf91`를 생성하고 실제 커밋 export에서 391개 전체 회귀를 통과했다. 원시 분석 JSON 8개는 로컬 보존·Git 제외했으며 순수 합성 fixture 8개를 포함해 추적 파일은 61개다. 제품 기능·JSON·CLI는 유지한다. 최종 검증 기록은 상태 문서 2개의 후속 문서 커밋으로 남긴다. 상세 목록·출처·커밋 기록은 [최초 커밋 검토·완료 기록](FIRST_COMMIT_PLAN.md)에 있다. 프로그램 IMPLEMENTED와 실제 고객 작업 COMPLETED는 별개다.
 
 ## 데이터와 CLI
 
@@ -67,11 +67,17 @@ python -m environment_detector project dashboard customer-data/projects/JOB-ID
 
 ## 커밋·완료 상태
 
-사용자가 최초 로컬 커밋과 검증 완료를 승인했다. 현재 로컬 전체 회귀·내용 검토·보호 파일 검사를 통과했다. 후보 61개를 명시적으로 스테이징한 뒤 실제 첫 커밋 트리를 export하여 import/전체 회귀를 확인하고, 확인된 커밋 ID와 결과를 문서 후속 커밋으로 기록한다. 이 문서는 첫 커밋 직전 상태다.
+- 첫 로컬 기준 커밋: **`b560149ecf910cca224d338b9f7ddc24c9f63c7b`** — `chore: initialize Naver SEO Toolkit (STEP 1-3.1)`. 실제 커밋 시각은 `2026-10-16T14:35:07.855875+00:00`이며 정상 Git hooks/설정으로 생성했다. 별도 identity 설정, force-add, amend/reset, 원격 push는 하지 않았다.
+- 커밋 자체 검증: `git archive`로 위 커밋을 `results/codex-delegation/commit-20261016T142733Z/committed-export/`에 새로 내보냈다. export의 파일 61개가 실제 커밋 트리와 일치하고 `.git`·`.venv`·원시 JSON 8개·고객/결과/바이너리는 없다.
+- 실제 export import: 기존 가상환경의 Python 절대 경로를 재사용해 cwd를 export로 지정했다. `environment_detector.__file__`이 **`results/codex-delegation/commit-20261016T142733Z/committed-export/environment_detector/__init__.py`**(프로젝트 루트 기준)임을 assert로 확인했다. 원본 소스/원시 fixture 읽기 및 실네트워크를 차단한 상태다.
+- export 전체 회귀: **2026-10-16 14:35:13~14:35:28 UTC**, `-m pytest -q` → **391 passed in 14.80s**, 종료 코드 0. 작업 트리 복사본이 아닌 실제 첫 커밋 트리의 결과다.
+- 최종 기록은 상태 문서 2개만의 후속 커밋 `docs: record baseline verification and completion`으로 남긴다. 문서 커밋 자체의 해시를 자기 문서에 넣지 않는다. 최종 HEAD의 소스/테스트/fixture/양식/설정 blob은 검증한 커밋과 동일하고 차이는 이 문서와 PROJECT_STATE.md뿐이다. 전체 회귀를 불필요하게 반복하지 않고 blob 동일성·문서 일관성을 검사한다.
+- 최종 추적 파일은 **61개**이며 스테이징·미커밋 변경·추가 untracked 파일이 없는 깨끗한 작업 트리로 완료한다. 작업 전의 ignored 고객 자료·원시 8개·results/·도구는 그대로 보존한다. 실제 최종 HEAD/상태/검사 결과는 Git 제외 `results/codex-delegation/commit-20261016T142733Z/completion-summary.json`에 기록한다.
+- 이번 요청 범위의 미해결 문제는 없다. STEP 4와 다른 기능 개발은 시작하지 않았다. 합성 회귀 통과는 실제 고객 사이트의 최신 기술·SEO·권한·색인/순위/캐러셀 노출을 입증하지 않는다.
 
 ## 현재와 다음 작업
 
-- 현재: 사용자가 승인한 첫 로컬 기준 커밋 완료 작업을 진행 중이다. 로컬 391개 전체 회귀와 내용/출처/제외 검토를 통과했다. 스테이징·첫 커밋·실제 커밋 export 검증과 결과 기록이 남아 있다.
+- 현재: 승인된 첫 로컬 기준 커밋과 실제 커밋 export의 391개 회귀 검증을 완료했다. 이 문서 커밋으로 검증 결과 기록까지 마무리한다. 제품·테스트·입력은 검증한 커밋과 동일하며 요청 범위의 남은 문제는 없다.
 - 다음: 이 단계의 결과를 조정 세션에 인계하고 종료한다. 원격 push·다음 STEP·사이트 요청·운영 변경은 실행하지 않는다. 이후 작업은 사용자 후속 지시를 따른다.
 - 한계: 실제 고객 권한·운영 환경·검색 노출 검증은 하지 않았다. 합성 입력과 오프라인 회귀는 소프트웨어 동작만 검증한다.
 

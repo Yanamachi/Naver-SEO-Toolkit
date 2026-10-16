@@ -118,7 +118,13 @@ OPTIONAL 결정과 기존 스크립트의 역사적 REVIEWS/COMMON 해석은 유
 
 ## 커밋·완료 기록
 
-사용자가 최초 로컬 커밋과 검증 완료를 승인했다. 현재 로컬 전체 회귀·내용 검토·보호 파일 검사를 통과했다. 후보 61개를 명시적으로 스테이징한 뒤 실제 첫 커밋 트리를 export하여 import/전체 회귀를 확인하고, 확인된 커밋 ID와 결과를 문서 후속 커밋으로 기록한다. 이 문서는 첫 커밋 직전 상태다.
+- 첫 로컬 기준 커밋: **`b560149ecf910cca224d338b9f7ddc24c9f63c7b`** — `chore: initialize Naver SEO Toolkit (STEP 1-3.1)`. 실제 커밋 시각은 `2026-10-16T14:35:07.855875+00:00`이며 정상 Git hooks/설정으로 생성했다. 별도 identity 설정, force-add, amend/reset, 원격 push는 하지 않았다.
+- 커밋 자체 검증: `git archive`로 위 커밋을 `results/codex-delegation/commit-20261016T142733Z/committed-export/`에 새로 내보냈다. export의 파일 61개가 실제 커밋 트리와 일치하고 `.git`·`.venv`·원시 JSON 8개·고객/결과/바이너리는 없다.
+- 실제 export import: 기존 가상환경의 Python 절대 경로를 재사용해 cwd를 export로 지정했다. `environment_detector.__file__`이 **`results/codex-delegation/commit-20261016T142733Z/committed-export/environment_detector/__init__.py`**(프로젝트 루트 기준)임을 assert로 확인했다. 원본 소스/원시 fixture 읽기 및 실네트워크를 차단한 상태다.
+- export 전체 회귀: **2026-10-16 14:35:13~14:35:28 UTC**, `-m pytest -q` → **391 passed in 14.80s**, 종료 코드 0. 작업 트리 복사본이 아닌 실제 첫 커밋 트리의 결과다.
+- 최종 기록은 상태 문서 2개만의 후속 커밋 `docs: record baseline verification and completion`으로 남긴다. 문서 커밋 자체의 해시를 자기 문서에 넣지 않는다. 최종 HEAD의 소스/테스트/fixture/양식/설정 blob은 검증한 커밋과 동일하고 차이는 이 문서와 PROJECT_STATE.md뿐이다. 전체 회귀를 불필요하게 반복하지 않고 blob 동일성·문서 일관성을 검사한다.
+- 최종 추적 파일은 **61개**이며 스테이징·미커밋 변경·추가 untracked 파일이 없는 깨끗한 작업 트리로 완료한다. 작업 전의 ignored 고객 자료·원시 8개·results/·도구는 그대로 보존한다. 실제 최종 HEAD/상태/검사 결과는 Git 제외 `results/codex-delegation/commit-20261016T142733Z/completion-summary.json`에 기록한다.
+- 이번 요청 범위의 미해결 문제는 없다. STEP 4와 다른 기능 개발은 시작하지 않았다. 합성 회귀 통과는 실제 고객 사이트의 최신 기술·SEO·권한·색인/순위/캐러셀 노출을 입증하지 않는다.
 
 ## 복구와 다음 작업
 
