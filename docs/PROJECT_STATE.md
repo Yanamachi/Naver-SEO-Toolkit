@@ -55,7 +55,7 @@ python -m environment_detector project dashboard customer-data/projects/JOB-ID
 
 ## 최근 검증·첫 로컬 커밋
 
-- 실행 세션: `01a14506-e649-71a3-991c-291340a71885`, 사용자 지시에 따른 YOLO 재개. 추가 Codex 세션/에이전트 없이 같은 단일 작성 세션으로 진행했다. 이번 사용자 승인은 명시적 후보 스테이징·첫 로컬 커밋·검증 결과 문서 커밋과 이번 문서 정정까지다. 원격 push·다음 STEP·사이트 요청·브라우저/외부 엔진·설치·전역 설정 변경·기존 이력 재작성은 포함하지 않는다.
+- 최초 커밋 작업의 실행 세션: `01a14506-e649-71a3-991c-291340a71885`, 사용자 지시에 따른 YOLO 재개. 추가 Codex 세션/에이전트 없이 같은 단일 작성 세션으로 진행했다. 당시 승인 범위는 명시적 후보 스테이징·첫 로컬 커밋·검증 결과 문서 커밋과 문서 정정이었다. 이후 사용자가 별도로 승인한 원격 push는 아래에 기록한다. 다음 STEP·사이트 요청·브라우저/외부 엔진·설치·전역 설정 변경·기존 이력 재작성은 진행하지 않았다.
 - 최신 로컬 전체 회귀: **2026-10-16 14:34:14~14:34:29 UTC**, 기존 `.venv/Scripts/python.exe -m pytest -q` → **391 passed in 13.91s**, 종료 코드 0. 실제 `cwd`는 프로젝트 루트, `environment_detector.__file__`은 그 루트의 `environment_detector/__init__.py`임을 실행 전 assert로 확인했다.
 - pytest와 Python 하위 프로세스에서 실네트워크와 원시 fixture 디렉터리 읽기를 차단했다. 커밋 export에서는 원본 프로그램·스크립트·테스트·양식 읽기도 차단해 editable install fallback을 금지했다. 기존 가상환경과 의존성만 재사용했다.
 - 보호 대상 39개 중 **36개 SHA-256 동일**: 원시 JSON 8개·프로그램 20개·스크립트 4개·pyproject 1개·가상 예제 JSON 3개. Markdown 양식 3개만 위 줄 끝 공백 수정으로 의도적 해시 변경이며 전후 해시는 `minimal-template-fix.json`에 기록했다. `.gitignore` 불변, 원시 8개 포함 **29개 제외 경로 검사 통과**. 고객 데이터 디렉터리는 읽거나 수정하지 않는다.
@@ -78,9 +78,16 @@ python -m environment_detector project dashboard customer-data/projects/JOB-ID
 
 ## 현재와 다음 작업
 
-- 현재: 승인된 첫 로컬 기준 커밋·실제 커밋 export의 391개 회귀 검증·결과 기록·문서 정정을 완료했다. 제품·테스트·입력은 검증한 기준 커밋과 동일하며 요청 범위의 남은 문제는 없다. 사용자 후속 지시를 기다린다.
-- 다음: 최종 결과를 조정 세션에 인계하고 종료한다. 다음 STEP은 시작하지 않았으며 원격 push·사이트 요청·운영 변경도 하지 않았다. 사용자 후속 지시 전 추가 작업은 없다.
+- 현재: 첫 로컬 기준 커밋·실제 커밋 export의 391개 회귀 검증·문서 정정과, 별도 승인된 GitHub 비공개 저장소의 최초 push를 완료했다. 제품·테스트·입력은 검증한 기준 커밋과 동일하다. 사용자 후속 지시를 기다린다.
+- 다음: 사용자 후속 지시 대기. 다음 STEP·사이트 요청·운영 변경은 시작하지 않았다.
 - 한계: 실제 고객 권한·운영 환경·검색 노출 검증은 하지 않았다. 합성 입력과 오프라인 회귀는 소프트웨어 동작만 검증한다.
+
+## GitHub 원격 저장소 — 2026-10-17 KST
+
+- 사용자의 명시적 push 요청에 따라 로그인된 `Yanamachi` 계정에 [Naver-SEO-Toolkit](https://github.com/Yanamachi/Naver-SEO-Toolkit) **비공개 저장소**를 생성했다. `origin`은 `https://github.com/Yanamachi/Naver-SEO-Toolkit.git`, 브랜치는 `main`, 추적 대상은 `origin/main`이다.
+- 최초 push는 `024a094998698fb0afd1511a2e88e7eeaadcd2eb`까지 반영됐으며 GitHub API의 원격 SHA와 로컬 HEAD 일치를 확인했다. 이번 원격 상태 기록도 같은 브랜치의 문서 커밋으로 관리한다. 최신 동기화는 `git rev-parse HEAD`와 `git ls-remote origin refs/heads/main`으로 확인한다.
+- 추적 파일 61개만 업로드한다. 고객 자료·원시 분석 JSON 8개·결과/로그/백업·가상환경·외부 실행 파일·인증정보 제외 정책을 유지한다. 제품·테스트·fixture 변경이 없어 pytest는 다시 실행하지 않았으며 위 391개 회귀 결과와 검증한 Git blob의 동일성을 유지한다.
+- 이번 원격 생성·push는 조정 세션이 Git/GitHub CLI로 직접 처리했다. 인증은 기존 GitHub CLI 키링을 재사용했고 push 명령에만 credential helper를 지정했다. 토큰 저장·전역 설정 변경·force push는 하지 않았다. 변경 전 Git 로컬 설정과 상태 문서 백업, 최종 원격 검증 기록은 Git 제외 `results/git-push/`에 있다.
 
 ## 미구현·제약·미확인
 
