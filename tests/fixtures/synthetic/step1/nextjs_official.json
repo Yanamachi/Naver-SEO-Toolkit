@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC_TEST_FIXTURE",
+  "fixture_purpose": "Hand-authored offline scenario; no website was requested.",
+  "analyzed_at": null,
+  "status": "ok",
+  "request_url": "https://nextjs.org/",
+  "final_url": "https://nextjs.org/",
+  "http": {
+    "status_code": 200,
+    "size_bytes": 687,
+    "redirects": [],
+    "headers": {
+      "content-type": "text/html",
+      "server": "Vercel"
+    }
+  },
+  "technologies": {
+    "cms": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "frontend": [
+      {
+        "name": "Next.js",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-1.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-2.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-3.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-4.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-5.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-6.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-7.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-8.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-9.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          },
+          {
+            "rule": "next_assets",
+            "source": "html.script.src",
+            "value": "/_next/static/synthetic-fixture/chunk-10.js",
+            "meaning": "Next.js build resource; backend and React runtime are not inferred.",
+            "reference": "https://nextjs.org/blog/next-7"
+          }
+        ]
+      }
+    ],
+    "backend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "server": [
+      {
+        "name": "Vercel",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "rule": "server_header",
+            "source": "http.header.server",
+            "value": "Vercel",
+            "meaning": "Server header as advertised by the responder; origin software is UNKNOWN.",
+            "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.4"
+          }
+        ]
+      }
+    ],
+    "cdn": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ]
+  },
+  "development_model": {
+    "name": "UNKNOWN",
+    "confidence": 0,
+    "evidence": []
+  },
+  "errors": [],
+  "fixture_input": {
+    "headers": {
+      "content-type": "text/html",
+      "server": "Vercel"
+    },
+    "html": "<script src=\"/_next/static/synthetic-fixture/chunk-1.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-2.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-3.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-4.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-5.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-6.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-7.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-8.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-9.js\"></script><script src=\"/_next/static/synthetic-fixture/chunk-10.js\"></script><p>Synthetic test page</p>"
+  }
+}

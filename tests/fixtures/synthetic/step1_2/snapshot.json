@@ -1,0 +1,82 @@
+{
+  "data_origin": "SYNTHETIC_TEST_FIXTURE",
+  "fixture_purpose": "Fabricated comparison branches. Fixed names/URLs are lookup keys, not measurements.",
+  "measurements": {
+    "data_origin": "SYNTHETIC_TEST_FIXTURE",
+    "pd_version": "SYNTHETIC_NOT_EXECUTED",
+    "started_at": "SYNTHETIC_NOT_MEASURED",
+    "finished_at": "SYNTHETIC_NOT_MEASURED",
+    "targets": [
+      {
+        "name": "wordpress_nasa",
+        "url": "https://www.nasa.gov/",
+        "detector_elapsed_seconds": 0,
+        "pd_elapsed_seconds": 0
+      },
+      {
+        "name": "imweb_gilnmi",
+        "url": "https://gilnmi.imweb.me/",
+        "detector_elapsed_seconds": 0,
+        "pd_elapsed_seconds": 0
+      },
+      {
+        "name": "cafe24_demo",
+        "url": "https://ecudemo159670.cafe24.com/",
+        "detector_elapsed_seconds": 0,
+        "pd_elapsed_seconds": 0
+      },
+      {
+        "name": "nextjs_official",
+        "url": "https://nextjs.org/",
+        "detector_elapsed_seconds": 0,
+        "pd_elapsed_seconds": 0
+      },
+      {
+        "name": "unknown_example",
+        "url": "https://example.com/",
+        "detector_elapsed_seconds": 0,
+        "pd_elapsed_seconds": 0
+      }
+    ]
+  },
+  "projectdiscovery": [
+    {
+      "data_origin": "SYNTHETIC_TEST_FIXTURE",
+      "input": "https://www.nasa.gov/",
+      "status_code": 200,
+      "tech": [
+        "WordPress",
+        "PHP",
+        "MySQL"
+      ]
+    },
+    {
+      "data_origin": "SYNTHETIC_TEST_FIXTURE",
+      "input": "https://gilnmi.imweb.me/",
+      "status_code": 200,
+      "tech": [
+        "Imweb"
+      ]
+    },
+    {
+      "data_origin": "SYNTHETIC_TEST_FIXTURE",
+      "input": "https://ecudemo159670.cafe24.com/",
+      "status_code": 200,
+      "tech": [
+        "Cloudflare"
+      ]
+    },
+    {
+      "data_origin": "SYNTHETIC_TEST_FIXTURE",
+      "input": "https://nextjs.org/",
+      "status_code": 200,
+      "tech": []
+    },
+    {
+      "data_origin": "SYNTHETIC_TEST_FIXTURE",
+      "input": "https://example.com/",
+      "status_code": 200,
+      "tech": []
+    }
+  ]
+}

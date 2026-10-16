@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC_TEST_FIXTURE",
+  "fixture_purpose": "Hand-authored offline scenario; no website was requested.",
+  "analyzed_at": null,
+  "status": "ok",
+  "request_url": "https://gilnmi.imweb.me/",
+  "final_url": "https://gilnmi.imweb.me/",
+  "http": {
+    "status_code": 200,
+    "size_bytes": 336,
+    "redirects": [],
+    "headers": {
+      "content-type": "text/html",
+      "server": "CloudFront"
+    }
+  },
+  "technologies": {
+    "cms": [
+      {
+        "name": "Imweb",
+        "confidence": 0.55,
+        "evidence": [
+          {
+            "rule": "imweb_assets",
+            "source": "html.img.src",
+            "value": "https://cdn.imweb.me/synthetic-fixture/image-1.png",
+            "meaning": "Imweb-hosted resource only; does not prove this page runs on Imweb.",
+            "reference": "https://imweb.me/qna?mode=faq&q=27524"
+          },
+          {
+            "rule": "imweb_assets",
+            "source": "html.img.src",
+            "value": "https://cdn.imweb.me/synthetic-fixture/image-2.png",
+            "meaning": "Imweb-hosted resource only; does not prove this page runs on Imweb.",
+            "reference": "https://imweb.me/qna?mode=faq&q=27524"
+          },
+          {
+            "rule": "imweb_assets",
+            "source": "html.img.src",
+            "value": "https://cdn.imweb.me/synthetic-fixture/image-3.png",
+            "meaning": "Imweb-hosted resource only; does not prove this page runs on Imweb.",
+            "reference": "https://imweb.me/qna?mode=faq&q=27524"
+          },
+          {
+            "rule": "imweb_assets",
+            "source": "html.img.src",
+            "value": "https://cdn.imweb.me/synthetic-fixture/image-4.png",
+            "meaning": "Imweb-hosted resource only; does not prove this page runs on Imweb.",
+            "reference": "https://imweb.me/qna?mode=faq&q=27524"
+          },
+          {
+            "rule": "imweb_assets",
+            "source": "html.img.src",
+            "value": "https://cdn.imweb.me/synthetic-fixture/image-5.png",
+            "meaning": "Imweb-hosted resource only; does not prove this page runs on Imweb.",
+            "reference": "https://imweb.me/qna?mode=faq&q=27524"
+          }
+        ]
+      }
+    ],
+    "frontend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "backend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "server": [
+      {
+        "name": "CloudFront",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "rule": "server_header",
+            "source": "http.header.server",
+            "value": "CloudFront",
+            "meaning": "Server header as advertised by the responder; origin software is UNKNOWN.",
+            "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.4"
+          }
+        ]
+      }
+    ],
+    "cdn": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ]
+  },
+  "development_model": {
+    "name": "UNKNOWN",
+    "confidence": 0,
+    "evidence": []
+  },
+  "errors": [],
+  "fixture_input": {
+    "headers": {
+      "content-type": "text/html",
+      "server": "CloudFront"
+    },
+    "html": "<img src=\"https://cdn.imweb.me/synthetic-fixture/image-1.png\"><img src=\"https://cdn.imweb.me/synthetic-fixture/image-2.png\"><img src=\"https://cdn.imweb.me/synthetic-fixture/image-3.png\"><img src=\"https://cdn.imweb.me/synthetic-fixture/image-4.png\"><img src=\"https://cdn.imweb.me/synthetic-fixture/image-5.png\"><p>Synthetic test page</p>"
+  }
+}

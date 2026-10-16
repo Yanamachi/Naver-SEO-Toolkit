@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC_TEST_FIXTURE",
+  "fixture_purpose": "Hand-authored offline scenario; no website was requested.",
+  "analyzed_at": null,
+  "status": "ok",
+  "request_url": "https://www.nasa.gov/",
+  "final_url": "https://www.nasa.gov/",
+  "http": {
+    "status_code": 200,
+    "size_bytes": 708,
+    "redirects": [],
+    "headers": {
+      "content-type": "text/html",
+      "server": "nginx"
+    }
+  },
+  "technologies": {
+    "cms": [
+      {
+        "name": "WordPress",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "rule": "wordpress_generator",
+            "source": "html.meta.generator",
+            "value": "WordPress",
+            "meaning": "Page explicitly advertises WordPress; runtime is not verified.",
+            "reference": "https://developer.wordpress.org/reference/functions/wp_generator/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-1.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-2.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-3.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-4.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-5.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-6.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-7.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-8.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          },
+          {
+            "rule": "wordpress_assets",
+            "source": "html.script.src",
+            "value": "/wp-content/themes/synthetic-fixture/asset-9.js",
+            "meaning": "WordPress-style resource path; a static export or embedded resource is possible.",
+            "reference": "https://learn.wordpress.org/lesson/understand-where-your-files-live/"
+          }
+        ]
+      }
+    ],
+    "frontend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "backend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "server": [
+      {
+        "name": "nginx",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "rule": "server_header",
+            "source": "http.header.server",
+            "value": "nginx",
+            "meaning": "Server header as advertised by the responder; origin software is UNKNOWN.",
+            "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.4"
+          }
+        ]
+      }
+    ],
+    "cdn": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ]
+  },
+  "development_model": {
+    "name": "UNKNOWN",
+    "confidence": 0,
+    "evidence": []
+  },
+  "errors": [],
+  "fixture_input": {
+    "headers": {
+      "content-type": "text/html",
+      "server": "nginx"
+    },
+    "html": "<meta name=\"generator\" content=\"WordPress\"><script src=\"/wp-content/themes/synthetic-fixture/asset-1.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-2.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-3.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-4.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-5.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-6.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-7.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-8.js\"></script><script src=\"/wp-content/themes/synthetic-fixture/asset-9.js\"></script><p>Synthetic test page</p>"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC_TEST_FIXTURE",
+  "fixture_purpose": "Hand-authored offline scenario; no website was requested.",
+  "analyzed_at": null,
+  "status": "ok",
+  "request_url": "https://customer.example/",
+  "final_url": "https://customer.example/",
+  "http": {
+    "status_code": 200,
+    "size_bytes": 26,
+    "redirects": [],
+    "headers": {
+      "content-type": "text/html",
+      "server": "cloudflare",
+      "cf-ray": "1111111111111111-TST"
+    }
+  },
+  "technologies": {
+    "cms": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "frontend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "backend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "server": [
+      {
+        "name": "cloudflare",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "rule": "server_header",
+            "source": "http.header.server",
+            "value": "cloudflare",
+            "meaning": "Server header as advertised by the responder; origin software is UNKNOWN.",
+            "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.4"
+          }
+        ]
+      }
+    ],
+    "cdn": [
+      {
+        "name": "Cloudflare",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "rule": "cloudflare_ray",
+            "source": "http.header.cf-ray",
+            "value": "1111111111111111-TST",
+            "meaning": "Cloudflare response marker; does not identify origin infrastructure.",
+            "reference": "https://developers.cloudflare.com/speed/troubleshooting/slow-website/"
+          }
+        ]
+      }
+    ]
+  },
+  "development_model": {
+    "name": "UNKNOWN",
+    "confidence": 0,
+    "evidence": []
+  },
+  "errors": [],
+  "fixture_input": {
+    "headers": {
+      "content-type": "text/html",
+      "server": "cloudflare",
+      "cf-ray": "1111111111111111-TST"
+    },
+    "html": "<p>Synthetic test page</p>"
+  }
+}

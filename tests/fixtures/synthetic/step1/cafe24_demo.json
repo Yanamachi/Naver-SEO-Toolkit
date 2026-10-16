@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC_TEST_FIXTURE",
+  "fixture_purpose": "Hand-authored offline scenario; no website was requested.",
+  "analyzed_at": null,
+  "status": "ok",
+  "request_url": "https://ecudemo159670.cafe24.com/",
+  "final_url": "https://ecudemo159670.cafe24.com/",
+  "http": {
+    "status_code": 200,
+    "size_bytes": 692,
+    "redirects": [],
+    "headers": {
+      "content-type": "text/html",
+      "server": "openresty"
+    }
+  },
+  "technologies": {
+    "cms": [
+      {
+        "name": "Cafe24",
+        "confidence": 0.55,
+        "evidence": [
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-1.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-2.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-3.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-4.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-5.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-6.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-7.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-8.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          },
+          {
+            "rule": "cafe24_assets",
+            "source": "html.img.src",
+            "value": "https://img.echosting.cafe24.com/synthetic-fixture/image-9.png",
+            "meaning": "Cafe24 template resource only; does not prove Cafe24 hosting or runtime.",
+            "reference": "https://sdsupport.cafe24.com/module/product/detail.html"
+          }
+        ]
+      }
+    ],
+    "frontend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "backend": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ],
+    "server": [
+      {
+        "name": "openresty",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "rule": "server_header",
+            "source": "http.header.server",
+            "value": "openresty",
+            "meaning": "Server header as advertised by the responder; origin software is UNKNOWN.",
+            "reference": "https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.4"
+          }
+        ]
+      }
+    ],
+    "cdn": [
+      {
+        "name": "UNKNOWN",
+        "confidence": 0,
+        "evidence": []
+      }
+    ]
+  },
+  "development_model": {
+    "name": "UNKNOWN",
+    "confidence": 0,
+    "evidence": []
+  },
+  "errors": [],
+  "fixture_input": {
+    "headers": {
+      "content-type": "text/html",
+      "server": "openresty"
+    },
+    "html": "<img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-1.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-2.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-3.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-4.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-5.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-6.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-7.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-8.png\"><img src=\"https://img.echosting.cafe24.com/synthetic-fixture/image-9.png\"><p>Synthetic test page</p>"
+  }
+}

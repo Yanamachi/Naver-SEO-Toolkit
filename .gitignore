@@ -1,0 +1,35 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+results/
+tools/projectdiscovery-httpx/
+customer-data/
+projects/
+
+# Local credentials and private key material
+.env
+.env.*
+credentials/
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# External executables and installers
+*.exe
+*.dll
+*.msi
+
+# Recorded website analysis outputs; excluded even when copied under tests
+tests/fixtures/step1/blocked-smoke.json
+tests/fixtures/step1/cafe24_demo.json
+tests/fixtures/step1/customer.json
+tests/fixtures/step1/imweb_gilnmi.json
+tests/fixtures/step1/nextjs_official.json
+tests/fixtures/step1/unknown_example.json
+tests/fixtures/step1/wordpress_nasa.json
+tests/fixtures/step1_2/snapshot.json

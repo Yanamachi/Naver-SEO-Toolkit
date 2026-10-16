@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "naver-environment-detector"
+version = "0.1.0"
+description = "Read-only website environment detection from public evidence"
+requires-python = ">=3.11"
+dependencies = ["httpx>=0.28,<0.29", "beautifulsoup4>=4.13,<5"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+environment-detector = "environment_detector.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["environment_detector*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

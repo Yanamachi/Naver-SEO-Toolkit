@@ -1,0 +1,25 @@
+{
+  "company_name": "[가상] 새봄 예시의원",
+  "industry": "병원·의원 (테스트 데이터)",
+  "site_url": "https://hospital.example.com/",
+  "reported_cms": null,
+  "requested_services": ["네이버 캐러셀", "SEO", "이미지 최적화"],
+  "target_queries": ["새봄 예시의원", "가상동 피부과"],
+  "reference_result": {
+    "urls": [],
+    "screenshots": ["가상-고객이-전달할-검색화면.png (자료명 예시, 실제 파일 아님)"],
+    "device": "모바일",
+    "description": "의료진 카드가 여러 개 보이는 검색 화면을 원함. 일반 캐러셀인지 다른 기능인지는 모름."
+  },
+  "content_type": "의료진",
+  "target_page_urls": ["https://hospital.example.com/doctors/"],
+  "content_available": "yes",
+  "images_available": "yes",
+  "content_usage_rights": "yes",
+  "modification_owner": "가상 홈페이지 제작사 담당 부서 (고객 진술)",
+  "modification_route": "고객 제작사에 검토안 전달 후 별도 승인",
+  "content_review_owner": "가상 병원 콘텐츠 검토 담당 부서",
+  "desired_schedule": "견적 후 협의 가능",
+  "additional_requests": "완전한 가상 의뢰입니다. 운영 사이트 변경 없이 사전 견적 가능성만 확인합니다.",
+  "public_analysis_consent": false
+}

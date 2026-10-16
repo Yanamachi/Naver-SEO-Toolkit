@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC_TEST_FIXTURE · 가상 예제이며 실제 사이트를 분석한 결과가 아님",
+  "status": "ok",
+  "analyzed_at": "2026-10-15T00:00:00+00:00",
+  "request_url": "https://hospital.example.com/",
+  "final_url": "https://hospital.example.com/",
+  "http": {"status_code": 200, "size_bytes": 50, "redirects": [], "headers": {"content-type": "text/html"}},
+  "technologies": {
+    "cms": [{"name": "WordPress", "confidence": 0.95, "evidence": [{"rule": "wordpress_generator", "source": "html.meta.generator", "value": "WordPress (가상 테스트용 관찰값)", "meaning": "가상 테스트 데이터. 실제 CMS 및 버전을 관찰한 것이 아닙니다.", "reference": "https://developer.wordpress.org/reference/functions/wp_generator/"}]}],
+    "frontend": [{"name": "UNKNOWN", "confidence": 0.0, "evidence": []}],
+    "backend": [{"name": "UNKNOWN", "confidence": 0.0, "evidence": []}],
+    "server": [{"name": "UNKNOWN", "confidence": 0.0, "evidence": []}],
+    "cdn": [{"name": "UNKNOWN", "confidence": 0.0, "evidence": []}]
+  },
+  "development_model": {"name": "UNKNOWN", "confidence": 0.0, "evidence": []},
+  "errors": [],
+  "limitations": ["가상 테스트 fixture입니다. 네트워크 요청과 실제 고객 정보를 사용하지 않았습니다."]
+}
